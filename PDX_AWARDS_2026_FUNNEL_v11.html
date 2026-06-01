@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDX Awards 2026 Gala — Malaysia Digital Transformation Awards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pdx-dark: #0A0E1A;
+            --pdx-navy: #0F1528;
+            --pdx-gold: #E2D4B9;
+            --pdx-gold-light: #F0E6D3;
+            --pdx-gold-dark: #C4B59A;
+            --pdx-blue: #1E3A8A;
+            --pdx-blue-light: #3B82F6;
+            --pdx-purple: #7C3AED;
+            --pdx-white: #FFFFFF;
+            --pdx-gray: #8A95A8;
+            --pdx-gray-dark: #5A6578;
+            --pdx-border: rgba(226, 212, 185, 0.15);
+            --font-display: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--pdx-dark);
+            color: var(--pdx-white);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        /* ===== SCARCITY BAR ===== */
+        .scarcity-bar {
+            background: linear-gradient(90deg, rgba(201, 162, 39, 0.15), rgba(201, 162, 39, 0.05));
+            border-bottom: 1px solid var(--pdx-border);
+            padding: 12px 20px;
+            text-align: center;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--pdx-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .scarcity-bar span { color: #FF6B6B; font-weight: 700; }
+
+        /* ===== COUNTDOWN ===== */
+        .info-bar {
+            background: linear-gradient(90deg, rgba(5,8,16,0.98), rgba(10,14,26,0.98), rgba(5,8,16,0.98));
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 16px 40px;
+            text-align: center;
+        }
+        .info-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--pdx-gold);
+        }
+        .info-separator {
+            color: rgba(212, 175, 55, 0.3);
+        }
+        .countdown-section {
+            background: rgba(255,255,255,0.01);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            padding: 16px 40px;
+            text-align: center;
+        }
+        .countdown-label {
+            font-family: var(--font-display);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--pdx-gray-dark);
+            margin-bottom: 10px;
+        }
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .countdown-item {
+            text-align: center;
+            min-width: 60px;
+        }
+        .countdown-item .number {
+            font-family: var(--font-display);
+            font-size: clamp(24px, 3.5vw, 42px);
+            font-weight: 800;
+            color: var(--pdx-gold);
+            line-height: 1;
+            display: block;
+        }
+        .countdown-item .label {
+            font-size: 9px;
+            color: var(--pdx-gray-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+        .countdown-separator {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--pdx-gold);
+            opacity: 0.3;
+            align-self: flex-start;
+            padding-top: 6px;
+        }
+
+        /* ===== HERO — BRIGHTER GALA DINNER ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 40px;
+            position: relative;
+            overflow: visible;
+        }
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('hero-gala-main.jpg');
+            background-size: cover;
+            background-position: center center;
+            opacity: 0.5;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                rgba(5, 8, 16, 0.3) 0%,
+                rgba(5, 8, 16, 0.1) 30%,
+                rgba(5, 8, 16, 0.2) 60%,
+                rgba(5, 8, 16, 0.7) 100%);
+        }
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 1;
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(226,212,185,0.5) 0%, transparent 70%);
+            animation: float-particle 8s ease-in-out infinite;
+        }
+        .particle:nth-child(1) { width: 6px; height: 6px; top: 20%; left: 15%; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 10px; height: 10px; top: 35%; left: 80%; animation-delay: 1.5s; }
+        .particle:nth-child(3) { width: 5px; height: 5px; top: 60%; left: 25%; animation-delay: 3s; }
+        .particle:nth-child(4) { width: 8px; height: 8px; top: 15%; left: 60%; animation-delay: 2s; }
+        .particle:nth-child(5) { width: 6px; height: 6px; top: 75%; left: 70%; animation-delay: 4s; }
+        .particle:nth-child(6) { width: 4px; height: 4px; top: 45%; left: 45%; animation-delay: 0.5s; }
+        .particle:nth-child(7) { width: 10px; height: 10px; top: 80%; left: 40%; animation-delay: 5s; }
+        .particle:nth-child(8) { width: 7px; height: 7px; top: 10%; left: 90%; animation-delay: 3.5s; }
+        .particle:nth-child(9) { width: 9px; height: 9px; top: 50%; left: 10%; animation-delay: 6s; }
+        .particle:nth-child(10) { width: 5px; height: 5px; top: 30%; left: 35%; animation-delay: 2.5s; }
+        .particle:nth-child(11) { width: 12px; height: 12px; top: 65%; left: 85%; animation-delay: 1s; }
+        .particle:nth-child(12) { width: 7px; height: 7px; top: 25%; left: 50%; animation-delay: 4.5s; }
+        .particle:nth-child(13) { width: 5px; height: 5px; top: 85%; left: 20%; animation-delay: 3s; }
+        .particle:nth-child(14) { width: 9px; height: 9px; top: 40%; left: 75%; animation-delay: 2.5s; }
+        .particle:nth-child(15) { width: 6px; height: 6px; top: 55%; left: 55%; animation-delay: 5.5s; }
+        @keyframes float-particle {
+            0%, 100% { opacity: 0; transform: translateY(0) scale(1); }
+            50% { opacity: 1; transform: translateY(-20px) scale(1.2); }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 60px 40px;
+        }
+        .hero-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20%;
+            right: 20%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+        }
+        .hero-eyebrow {
+            font-family: var(--font-display);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--pdx-gold);
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 100px);
+            font-weight: 900;
+            line-height: 1.0;
+            letter-spacing: -0.03em;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8), 0 0 60px rgba(212, 175, 55, 0.4);
+        }
+        .hero-divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--pdx-gold), transparent);
+            margin: 24px auto;
+            opacity: 0.5;
+        }
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(13px, 1.6vw, 16px);
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 36px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+            opacity: 0.95;
+        }
+        .hero-meta { display: none; }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--pdx-gold), var(--pdx-gold-light), var(--pdx-amber));
+            color: var(--pdx-dark);
+            padding: 20px 52px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 16px;
+            letter-spacing: 1.5px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 40%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 60%
+            );
+            transform: translateX(-100%) rotate(45deg);
+            transition: transform 0.8s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4), 0 0 40px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+        .cta-button:hover::after {
+            transform: translateX(100%) rotate(45deg);
+        }
+        .cta-subtext {
+            font-size: 12px;
+            color: var(--pdx-white);
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+
+        /* ===== VIDEO / HERO EMBED SECTION (SEBA-STYLE) ===== */
+        .video-section {
+            padding: 0;
+            position: relative;
+            background: var(--pdx-dark);
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: linear-gradient(135deg, rgba(30,58,138,0.2), rgba(201,162,39,0.1));
+        }
+        .video-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 16px;
+            background: linear-gradient(135deg, rgba(30,58,138,0.15), rgba(201,162,39,0.08));
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .video-placeholder .play-btn {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--pdx-gold), var(--pdx-gold-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--pdx-dark);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 30px rgba(201, 162, 39, 0.3);
+        }
+        .video-placeholder .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(201, 162, 39, 0.4);
+        }
+        .video-placeholder p {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--pdx-gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ===== SECTIONS WITH IMAGE BACKGROUNDS ===== */
+        .section-blend {
+            padding: 100px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-blend .bg-image {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.06;
+            filter: blur(3px);
+        }
+        .section-blend .bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                rgba(10, 14, 26, 0.85) 0%,
+                rgba(10, 14, 26, 0.96) 50%,
+                rgba(10, 14, 26, 0.85) 100%);
+        }
+        .section-blend .content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+            position: relative;
+        }
+        .section-header::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--pdx-gold), transparent);
+            margin: 28px auto 0;
+            opacity: 0.6;
+        }
+        .section-header .eyebrow {
+            font-family: var(--font-display);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--pdx-gold);
+            margin-bottom: 16px;
+        }
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .section-header p {
+            color: var(--pdx-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 15px;
+        }
+
+        /* ===== WHY ATTEND ===== */
+        .why-attend .bg-image {
+            background-image: url('stage-lights.jpg');
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .why-card {
+            background: rgba(255,255,255,0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 24px;
+            padding: 48px 32px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+        }
+        .why-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.3);
+            background: rgba(255,255,255,0.06);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 60px rgba(212, 175, 55, 0.1);
+        }
+        .why-card .icon {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        .why-card h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--pdx-white);
+        }
+        .why-card p {
+            font-size: 14px;
+            color: var(--pdx-gray);
+            line-height: 1.6;
+        }
+
+        /* ===== TROPHY SHOWCASE ===== */
+        .trophy-showcase {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.08), rgba(201, 162, 39, 0.05));
+            border-top: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .trophy-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        .trophy-images {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .trophy-image {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--pdx-border);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.02);
+        }
+        .trophy-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .trophy-image .trophy-label {
+            font-family: var(--font-display);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--pdx-gold);
+            margin-top: 12px;
+        }
+        .trophy-text h2 {
+            font-family: var(--font-display);
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--pdx-white);
+        }
+        .trophy-text p {
+            color: var(--pdx-gray);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .trophy-text strong {
+            color: var(--pdx-gold);
+        }
+        .trophy-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .trophy-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--pdx-gray);
+        }
+        .trophy-feature span {
+            color: var(--pdx-gold);
+            font-size: 20px;
+        }
+
+        /* ===== EVENT EXPERIENCE ===== */
+        .experience-section .bg-image {
+            background-image: url('conference-stage.jpg');
+            opacity: 0.06;
+        }
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .experience-card {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+        .experience-card:hover {
+            border-color: var(--pdx-border);
+            background: rgba(255,255,255,0.05);
+        }
+        .experience-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(226, 212, 185, 0.08);
+            border: 1px solid var(--pdx-border);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        .experience-text h3 {
+            font-family: var(--font-display);
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--pdx-white);
+        }
+        .experience-text p {
+            font-size: 14px;
+            color: var(--pdx-gray);
+            line-height: 1.6;
+        }
+
+        /* ===== SOCIAL PROOF ===== */
+        .social-proof {
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .social-proof .bg-image {
+            background-image: url('networking-event.jpg');
+            opacity: 0.06;
+        }
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .stat-box {
+            text-align: center;
+        }
+        .stat-box h3 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            color: var(--pdx-gold);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .stat-box p {
+            font-size: 12px;
+            color: var(--pdx-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* ===== AWARDS — CORRECT 3-FAMILY STRUCTURE ===== */
+        .awards-section .bg-image {
+            background-image: url('awards-trophy.jpg');
+            opacity: 0.05;
+        }
+        .awards-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+            color: var(--pdx-gray);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .family {
+            margin-bottom: 64px;
+        }
+        .family-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .family-badge {
+            font-family: var(--font-display);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .badge-recognition { background: rgba(59, 130, 246, 0.15); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.25); }
+        .badge-digital { background: rgba(226, 212, 185, 0.15); color: var(--pdx-gold); border: 1px solid var(--pdx-border); }
+        .badge-innovation { background: rgba(124, 58, 237, 0.15); color: #A78BFA; border: 1px solid rgba(124, 58, 237, 0.25); }
+        .family-header h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--pdx-white);
+        }
+        .family-header p {
+            font-size: 13px;
+            color: var(--pdx-gray);
+            margin-left: auto;
+        }
+        .family-desc {
+            font-size: 14px;
+            color: var(--pdx-gray);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+        .award-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .award-card-full {
+            background: rgba(255,255,255,0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.08);
+            border-radius: 20px;
+            padding: 36px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .award-card-full::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+        }
+        .award-card-full:hover {
+            border-color: rgba(212, 175, 55, 0.25);
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(212, 175, 55, 0.08);
+        }
+        .award-card-full .award-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .award-card-full .target-tag {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+        .target-exhibitor { background: rgba(59, 130, 246, 0.12); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.2); }
+        .target-external { background: rgba(226, 212, 185, 0.12); color: var(--pdx-gold); border: 1px solid var(--pdx-border); }
+        .target-university { background: rgba(124, 58, 237, 0.12); color: #A78BFA; border: 1px solid rgba(124, 58, 237, 0.2); }
+        .award-card-full h4 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--pdx-white);
+            margin-bottom: 10px;
+        }
+        .award-card-full .award-desc {
+            font-size: 13px;
+            color: var(--pdx-gray);
+            line-height: 1.6;
+        }
+
+        /* ===== PACKAGES — HALF vs FULL TABLE ===== */
+        .packages-section {
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .packages-section .bg-image {
+            background-image: url('banquet-hall.jpg');
+            opacity: 0.06;
+        }
+        .package-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .package-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .package-card:hover {
+            border-color: var(--pdx-border);
+            transform: translateY(-4px);
+        }
+        .package-card.featured {
+            border-color: var(--pdx-border);
+            background: rgba(226, 212, 185, 0.06);
+        }
+        .package-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--pdx-gold), var(--pdx-gold-light));
+            color: var(--pdx-dark);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-family: var(--font-display);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .package-card h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .package-card .seats {
+            font-size: 13px;
+            color: var(--pdx-gray);
+            margin-bottom: 20px;
+        }
+        .package-card .price-label {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--pdx-gold);
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            padding: 8px 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .package-card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 28px;
+        }
+        .package-card ul li {
+            font-size: 13px;
+            color: var(--pdx-gray);
+            padding: 8px 0;
+            position: relative;
+            padding-left: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .package-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--pdx-gold);
+            font-weight: bold;
+        }
+        .package-cta {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--pdx-gold), var(--pdx-gold-light));
+            color: var(--pdx-dark);
+            border: none;
+            border-radius: 30px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+        .package-cta:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ===== AWARD WINNER BENEFITS ===== */
+        .winner-benefits .bg-image {
+            background-image: url('awards-trophy.jpg');
+        }
+        .winner-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .winner-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .winner-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--pdx-border);
+            background: rgba(255,255,255,0.06);
+        }
+        .winner-card .winner-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        .winner-card h4 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--pdx-white);
+        }
+        .winner-card p {
+            font-size: 13px;
+            color: var(--pdx-gray);
+            line-height: 1.6;
+        }
+
+        /* ===== SEBA-STYLE PARTNERS ===== */
+        .partners-section {
+            padding: 80px 40px;
+            background: linear-gradient(180deg, rgba(10,14,26,1) 0%, rgba(15,21,40,1) 100%);
+            border-top: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .partners-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .partners-content .section-header {
+            margin-bottom: 40px;
+        }
+        .partners-content .section-header h2 {
+            font-size: clamp(24px, 3vw, 36px);
+        }
+        .partners-tier {
+            margin-bottom: 48px;
+        }
+        .partners-tier h3 {
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--pdx-gray-dark);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .partners-tier.goh-tier h3 {
+            color: var(--pdx-gold);
+        }
+        .partners-row {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .partner-logo-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 24px 32px;
+            text-align: center;
+            transition: all 0.3s;
+            min-width: 160px;
+        }
+        .partner-logo-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--pdx-border);
+            background: rgba(255,255,255,0.05);
+        }
+        .partner-logo-card .logo-emoji {
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+        .partner-logo-card h4 {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--pdx-white);
+            margin-bottom: 4px;
+        }
+        .partner-logo-card p {
+            font-size: 11px;
+            color: var(--pdx-gray);
+        }
+        .partner-desc {
+            font-size: 12px;
+            color: var(--pdx-gray);
+            line-height: 1.5;
+            margin-top: 8px;
+            min-height: 54px;
+        }
+        .partner-link {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--pdx-gold);
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+        .partner-link:hover {
+            opacity: 0.7;
+        }
+        .partner-logo-card.goh {
+            border-color: var(--pdx-border);
+            background: rgba(226, 212, 185, 0.06);
+            position: relative;
+        }
+        .partner-logo-card.goh .goh-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--pdx-gold), var(--pdx-gold-light));
+            color: var(--pdx-dark);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-family: var(--font-display);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        /* ===== ORGANIZER ===== */
+        .organizer-section {
+            padding: 60px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .organizer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .organizer-content .eyebrow {
+            font-family: var(--font-display);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--pdx-gray-dark);
+            margin-bottom: 20px;
+        }
+        .organizer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .organizer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        .organizer-logo .org-emoji {
+            font-size: 48px;
+        }
+        .organizer-logo h4 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--pdx-white);
+        }
+        .organizer-logo p {
+            font-size: 12px;
+            color: var(--pdx-gray);
+        }
+
+        /* ===== TESTIMONIALS (SEBA-STYLE) ===== */
+        .testimonials-section {
+            padding: 80px 40px;
+            background: rgba(255,255,255,0.01);
+        }
+        .testimonials-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .testimonial-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+        .testimonial-card:hover {
+            border-color: var(--pdx-border);
+            background: rgba(255,255,255,0.05);
+        }
+        .testimonial-card .quote {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-style: italic;
+            color: var(--pdx-white);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .testimonial-card .author {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--pdx-gold);
+        }
+        .testimonial-card .role {
+            font-size: 12px;
+            color: var(--pdx-gray);
+        }
+
+        /* ===== FORM ===== */
+        .form-section {
+            padding: 80px 40px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 48px;
+        }
+        .form-container h2 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .form-container .subtitle {
+            text-align: center;
+            color: var(--pdx-gray);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--pdx-gray);
+            margin-bottom: 8px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: var(--pdx-white);
+            font-family: var(--font-body);
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--pdx-gold);
+        }
+        .form-group input::placeholder {
+            color: var(--pdx-gray-dark);
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .checkbox-group input {
+            width: auto;
+            margin-top: 4px;
+        }
+        .checkbox-group label {
+            font-size: 13px;
+            color: var(--pdx-gray);
+            line-height: 1.5;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--pdx-gold), var(--pdx-gold-light));
+            color: var(--pdx-dark);
+            border: none;
+            border-radius: 30px;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.25);
+        }
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .form-success h3 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            color: var(--pdx-gold);
+            margin-bottom: 12px;
+        }
+        .form-success p {
+            color: var(--pdx-gray);
+            font-size: 14px;
+        }
+
+        /* ===== TRUST ===== */
+        .trust-section {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--pdx-gray);
+        }
+
+        /* ===== FAQ ===== */
+        .faq-section {
+            padding: 80px 40px;
+            background: rgba(255,255,255,0.01);
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            padding: 20px 0;
+        }
+        .faq-item h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--pdx-white);
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        .faq-item p {
+            font-size: 14px;
+            color: var(--pdx-gray);
+            line-height: 1.5;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        footer p {
+            font-size: 12px;
+            color: var(--pdx-gray-dark);
+        }
+
+        /* ===== VENUE / ABOUT US ===== */
+        .venue-section {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.08), rgba(201, 162, 39, 0.05));
+            border-top: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .venue-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .venue-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .venue-img {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--pdx-border);
+        }
+        .venue-img img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .venue-text h2 {
+            font-family: var(--font-display);
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--pdx-white);
+        }
+        .venue-text p {
+            color: var(--pdx-gray);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .venue-details {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .venue-detail {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--pdx-gray);
+        }
+        .venue-detail span {
+            font-size: 20px;
+        }
+
+        /* ===== HOW TO PARTICIPATE ===== */
+        .participate-section {
+            padding: 80px 40px;
+        }
+        .participate-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .participate-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .participate-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .participate-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--pdx-border);
+            background: rgba(255,255,255,0.05);
+        }
+        .participate-card .step-num {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--pdx-gold);
+            margin-bottom: 16px;
+        }
+        .participate-card h3 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--pdx-white);
+        }
+        .participate-card p {
+            font-size: 13px;
+            color: var(--pdx-gray);
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .why-grid,
+            .experience-grid,
+            .award-grid,
+            .package-cards,
+            .trophy-content,
+            .winner-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .trophy-image {
+                order: -1;
+            }
+            .stats-row {
+                gap: 24px;
+            }
+            .form-container {
+                padding: 32px 24px;
+            }
+            .countdown-item {
+                min-width: 55px;
+            }
+            .countdown-separator {
+                display: none;
+            }
+            .hero-meta {
+                gap: 16px;
+                font-size: 12px;
+            }
+            .family-header {
+                flex-wrap: wrap;
+            }
+            .family-header p {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 4px;
+            }
+            .partners-row {
+                gap: 16px;
+            }
+            .partner-logo-card {
+                min-width: 140px;
+                padding: 20px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO — CLEAN GALA IMAGE WITH DARK OVERLAY -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-particles">
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-subtitle">The Benchmark of Digital Excellence. Join MNC visionaries, tech innovators, and SME founders as we honor the minds driving ASEAN's AI and digital revolution. Northern Malaysia's premier tech celebration.</p>
+            <a href="#packages" class="cta-button">Register now →</a>
+            <p class="cta-subtext">Limited to 80 VIP Tables — First-come, first-served</p>
+        </div>
+    </section>
+
+    <!-- INFO BAR -->
+    <div class="info-bar">
+        <div class="info-content">
+            <span class="info-item">⚡ July 15, 2026</span>
+            <span class="info-separator">|</span>
+            <span class="info-item">📍 Setia SPICE Arena, Penang</span>
+            <span class="info-separator">|</span>
+            <span class="info-item">🕰️ 7:30 PM - 10:30 PM</span>
+        </div>
+    </div>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown-section">
+        <div class="countdown-label">Gala Night Countdown — July 15, 7:30 PM</div>
+        <div class="countdown-timer" id="countdown">
+            <div class="countdown-item"><span class="number" id="days">00</span><div class="label">Days</div></div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item"><span class="number" id="hours">00</span><div class="label">Hours</div></div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item"><span class="number" id="minutes">00</span><div class="label">Minutes</div></div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item"><span class="number" id="seconds">00</span><div class="label">Seconds</div></div>
+        </div>
+    </div>
+
+    <!-- VIDEO SECTION (SEBA-STYLE) -->
+    <section class="video-section">
+        <div class="video-container">
+            <div class="video-placeholder">
+                <div class="play-btn">▶</div>
+                <p>PDX Awards 2026 Gala — Coming Soon</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY ATTEND -->
+    <section class="section-blend why-attend">
+        <div class="bg-image"></div>
+        <div class="bg-overlay"></div>
+        <div class="content">
+            <div class="section-header">
+                <div class="eyebrow">Why Industry Leaders Attend</div>
+                <h2>What You Gain</h2>
+                <p>Three strategic advantages for attending the most exclusive tech gala in Northern Malaysia</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="icon">🤝</div>
+                    <h3>Elite Business Matching</h3>
+                    <p>Connect directly with enterprise decision-makers, VC partners, and government stakeholders in an exclusive high-level networking environment.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon">📈</div>
+                    <h3>Elevated Brand Authority</h3>
+                    <p>Secure regional media exposure and align your corporate brand with the forefront of digital innovation and AI advancement.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon">🏆</div>
+                    <h3>Celebrate & Reward</h3>
+                    <p>Recognize the hard work of your internal tech teams and engineering leads with an unforgettable night of luxury and celebration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TROPHY SHOWCASE — BOTH DESIGNS -->
+    <section class="trophy-showcase">
+        <div class="trophy-content">
+            <div class="trophy-images">
+                <div class="trophy-image">
+                    <img src="trophy-pdx-recognition.jpg" alt="PDX Recognition Awards 2026 Trophy">
+                    <div class="trophy-label">🔵 Recognition Awards — For Exhibitors</div>
+                </div>
+                <div class="trophy-image">
+                    <img src="trophy-suprinova.jpg" alt="SUPRINOVA Digital Industry Awards 2026 Trophy">
+                    <div class="trophy-label">⚫🟡 SUPRINOVA — Digital Industry Awards</div>
+                </div>
+            </div>
+            <div class="trophy-text">
+                <div class="eyebrow" style="margin-bottom: 12px;">The Trophies</div>
+                <h2>Symbols of Excellence</h2>
+                <p>The <strong>PDX Recognition Awards</strong> trophy celebrates exhibitors with a luminous crystal design — a beacon of innovation that shines on stage and in their office for years to come.</p>
+                <p>The <strong>SUPRINOVA Digital Industry Awards</strong> trophy stands as a mark of prestige — commanding attention with its bold form, gold accents, and commanding presence. A trophy winners proudly display as proof of their excellence.</p>
+                <div class="trophy-features">
+                    <div class="trophy-feature"><span>💎</span> Crystal & Gold-Plated Finishes</div>
+                    <div class="trophy-feature"><span>🏛️</span> Elegant Black Base with Gold Detailing</div>
+                    <div class="trophy-feature"><span>🖥️</span> Custom-Engraved with Winner Details</div>
+                    <div class="trophy-feature"><span>✨</span> Premium Presentation Box Included</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VENUE / ABOUT US -->
+    <section class="venue-section">
+        <div class="venue-content">
+            <div class="venue-text">
+                <div class="eyebrow" style="margin-bottom: 12px;">The Venue</div>
+                <h2>Setia SPICE Convention Centre</h2>
+                <p>PDX Awards 2026 takes place at <strong>Setia SPICE</strong> — Penang's premier convention destination. Formerly known as PISA (Penang International Sports Arena), SPICE stands for <strong>Subterranean Penang International Convention & Exhibition</strong> Centre.</p>
+                <p>This award-winning venue features world-class facilities, stunning architecture, and a rooftop garden overlooking the Pearl of the Orient. The perfect backdrop for celebrating digital excellence.</p>
+                <div class="venue-details">
+                    <div class="venue-detail"><span>📍</span> Setia SPICE Convention Centre, Bayan Baru, Penang</div>
+                    <div class="venue-detail"><span>📅</span> July 15, 2026</div>
+                    <div class="venue-detail"><span>🕰️</span> 7:30 PM - 10:30 PM</div>
+                    <div class="venue-detail"><span>🎩</span> Black Tie Optional</div>
+                </div>
+            </div>
+            <div class="venue-images">
+                <div class="venue-img">
+                    <img src="spice-real.jpg" alt="Setia SPICE Exterior">
+                </div>
+                <div class="venue-img">
+                    <img src="spice-real.jpg" alt="Setia SPICE Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO PARTICIPATE -->
+    <section class="participate-section">
+        <div class="participate-content">
+            <div class="section-header">
+                <div class="eyebrow">Get Involved</div>
+                <h2>How to Participate</h2>
+                <p>Join the most prestigious digital awards celebration in Northern Malaysia</p>
+            </div>
+            <div class="participate-grid">
+                <div class="participate-card">
+                    <div class="step-num">01</div>
+                    <h3>Submit Your Nomination</h3>
+                    <p>Companies may self-nominate or be nominated by peers for the PDX Digital Awards. Exhibitors at PDX2026 are automatically considered for Recognition Awards.</p>
+                </div>
+                <div class="participate-card">
+                    <div class="step-num">02</div>
+                    <h3>Audit & Review</h3>
+                    <p>All nominations undergo a rigorous verification process involving both qualitative and quantitative benchmarks, audited by our independent jury panel.</p>
+                </div>
+                <div class="participate-card">
+                    <div class="step-num">03</div>
+                    <h3>Gala Night Reveal</h3>
+                    <p>Winners are revealed live at the Gala Dinner on July 15. The surprise element makes the moment even more memorable for all attendees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT EXPERIENCE -->
+    <section class="section-blend experience-section">
+        <div class="bg-image"></div>
+        <div class="bg-overlay"></div>
+        <div class="content">
+            <div class="section-header">
+                <div class="eyebrow">The Experience</div>
+                <h2>What Awaits at the Gala</h2>
+                <p>An evening designed for leaders who shape the future of digital Malaysia</p>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-icon">🎭</div>
+                    <div class="experience-text">
+                        <h3>Awards Ceremony</h3>
+                        <p>3 award families with 10 categories. From PDX Choice to Supreme Nova — witness the region's best take the stage.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">🍽️</div>
+                    <div class="experience-text">
+                        <h3>Premium Dining</h3>
+                        <p>5-course curated dining experience. Network over world-class cuisine while celebrating digital excellence with Northern Malaysia's tech elite.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">🎤</div>
+                    <div class="experience-text">
+                        <h3>Keynote Presentations</h3>
+                        <p>Industry visionaries sharing actionable insights on ASEAN's digital economy, AI governance, and Industry 4.0 transformation.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">🌐</div>
+                    <div class="experience-text">
+                        <h3>VIP Networking Lounge</h3>
+                        <p>Exclusive Yacht Circle access for full tables. Connect with government stakeholders, VC partners, and enterprise decision-makers in a private setting.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">📸</div>
+                    <div class="experience-text">
+                        <h3>Media & Press Coverage</h3>
+                        <p>Professional photographers and videographers capturing every moment. Your brand featured in post-event coverage reaching 50K+ audience across PDX channels.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-icon">🎁</div>
+                    <div class="experience-text">
+                        <h3>Exclusive Swag & Memorabilia</h3>
+                        <p>Premium event kit for every attendee — including branded materials, digital achievement profiles, and priority access to PDX2027 early bird pricing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="social-proof section-blend">
+        <div class="bg-image"></div>
+        <div class="bg-overlay" style="background: rgba(10, 14, 26, 0.88);"></div>
+        <div class="stats-row">
+            <div class="stat-box">
+                <h3>170+</h3>
+                <p>Exhibitors</p>
+            </div>
+            <div class="stat-box">
+                <h3>10,000</h3>
+                <p>Attendees</p>
+            </div>
+            <div class="stat-box">
+                <h3>10</h3>
+                <p>Award Categories</p>
+            </div>
+            <div class="stat-box">
+                <h3>3</h3>
+                <p>Award Families</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AWARDS — CORRECT 3-FAMILY STRUCTURE -->
+    <section class="section-blend awards-section" id="awards">
+        <div class="bg-image"></div>
+        <div class="bg-overlay"></div>
+        <div class="content">
+            <div class="section-header">
+                <div class="eyebrow">Official Award Tracks</div>
+                <h2>The PDX Awards 2026</h2>
+                <p>10 prestigious categories across 3 award families recognizing Malaysia's digital transformation champions</p>
+            </div>
+            <div class="awards-intro">
+                Winners are selected through secret observation (Recognition Awards), paid nomination with judging panels (PDX Digital Awards), and special nomination (Supreme Nova Awards). The surprise reveal at the Gala Dinner is the first time anyone learns who won.
+            </div>
+
+            <!-- FAMILY 1: RECOGNITION AWARDS (BLUE) -->
+            <div class="family">
+                <div class="family-header">
+                    <span class="family-badge badge-recognition">🔵 Recognition</span>
+                    <h3>Recognition Awards — For PDX Exhibitors</h3>
+                    <p>Secret observation during exhibition</p>
+                </div>
+                <p class="family-desc">Energetic, impactful awards for PDX2026 exhibitors. Judges observe booths secretly — winners revealed live at the Gala Dinner.</p>
+                <div class="award-grid">
+                    <div class="award-card-full">
+                        <div class="award-top">
+                            <span class="target-tag target-exhibitor">Exhibitor</span>
+                        </div>
+                        <h4>🏆 PDX Choice</h4>
+                        <p class="award-desc">The exhibitor whose booth, team, and overall presence most impressed the PDX judging panel through excellence in execution and digital storytelling.</p>
+                    </div>
+                    <div class="award-card-full">
+                        <div class="award-top">
+                            <span class="target-tag target-exhibitor">Exhibitor</span>
+                        </div>
+                        <h4>🏆 Most Engaging Booth</h4>
+                        <p class="award-desc">The booth that generated the most meaningful visitor engagement, demos, and conversations throughout the exhibition.</p>
+                    </div>
+                    <div class="award-card-full">
+                        <div class="award-top">
+                            <span class="target-tag target-exhibitor">Exhibitor</span>
+                        </div>
+                        <h4>🏆 People's Choice</h4>
+                        <p class="award-desc">Public vote winner. The booth that captured the hearts and attention of exhibition attendees through memorable experiences.</p>
+                    </div>
+                    <div class="award-card-full">
+                        <div class="award-top">
+                            <span class="target-tag target-exhibitor">Exhibitor</span>
+                        </div>
+                        <h4>🏆 Best Customer Experience</h4>
+                        <p class="award-desc">The exhibitor whose team demonstrated exceptional energy, knowledge, and hospitality — making every visitor feel valued.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAMILY 2: PDX DIGITAL AWARDS (BLACK + GOLD) -->
+            <div class="family">
+                <div class="family-header">
+                    <span class="family-badge badge-digital">⚫🟡 PDX Digital</span>
+                    <h3>PDX Digital Awards — For External Companies</h3>
+                    <p>Paid nomination + 10 nominees per category</p>
+                </div>
+                <p class="family-desc">Prestigious digital transformation awards for Malaysian companies. Each category features 10 nominees selected through paid entry and judging. Presented in partnership with Malaysia's leading digital institutions.</p>
+                <div class="award-grid">
+                    <div class="award-card-full">
+                        <div class="award-top">
+                            <span class="target-tag target-external">Presented by Digital Penang</span>
+                        </div>
+                        <h4>🏆 Digital Transformation of the Year</h4>
+                        <p class="award-desc">Recognizing the company that has most successfully transformed its operations, customer experience, or business model through digital technology. 10 nominees judged on impact and scalability.</p>
+                    </div>
+                    <div class="award-card-full">
+                        <div class="award-top">
+                            <span class="target-tag target-external">Presented by MPC</span>
+                        </div>
+                        <h4>🏆 Most Innovative Use of Emerging Tech</h4>
+                        <p class="award-desc">Honoring organizations leveraging cutting-edge technology — AI, blockchain, IoT, or robotics — to solve real business problems and create competitive advantage. 10 nominees.</p>
+                    </div>
+                    <div class="award-card-full">
+                        <div class="award-top">
+                            <span class="target-tag target-external">Presented by Penang Green Council</span>
+                        </div>
+                        <h4>🏆 Sustainability through Digitalization</h4>
+                        <p class="award-desc">Celebrating companies using digital solutions to advance environmental sustainability, reduce carbon footprint, or promote circular economy practices. 10 nominees.</p>
+                    </div>
+                    <div class="award-card-full">
+                        <div class="award-top">
+                            <span class="target-tag target-external">Presented by SAMENTA</span>
+                        </div>
+                        <h4>🏆 Digital Rising Star</h4>
+                        <p class="award-desc">Spotlighting emerging SMEs and startups whose digital-first approach is disrupting traditional industries and creating new market opportunities. 10 nominees.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAMILY 3: SUPREME NOVA AWARDS -->
+            <div class="family">
+                <div class="family-header">
+                    <span class="family-badge badge-innovation">🟣 Supreme Nova</span>
+                    <h3>Supreme Nova Awards — Special Recognition</h3>
+                    <p>By invitation / special nomination</p>
+                </div>
+                <p class="family-desc">The pinnacle of the PDX Awards 2026. Two prestigious special recognition awards honoring extraordinary individuals and organizations that have shaped Malaysia's digital landscape.</p>
+                <div class="award-grid">
+                    <div class="award-card-full">
+                        <div class="award-top">
+                            <span class="target-tag target-university">Special Recognition</span>
+                        </div>
+                        <h4>🏆 Supreme Nova — Innovation</h4>
+                        <p class="award-desc">Honoring the individual or organization whose groundbreaking innovation has redefined industry standards and inspired the next generation of digital pioneers in Malaysia.</p>
+                    </div>
+                    <div class="award-card-full">
+                        <div class="award-top">
+                            <span class="target-tag target-university">Special Recognition</span>
+                        </div>
+                        <h4>🏆 Supreme Nova — Leadership</h4>
+                        <p class="award-desc">Recognizing visionary leaders who have demonstrated exceptional commitment to driving digital transformation, building ecosystems, and mentoring Malaysia's tech talent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES — HALF vs FULL TABLE -->
+    <section class="packages-section section-blend" id="packages">
+        <div class="bg-image"></div>
+        <div class="bg-overlay" style="background: rgba(10, 14, 26, 0.90);"></div>
+        <div class="content">
+            <div class="section-header">
+                <div class="eyebrow">Corporate Attendance Options</div>
+                <h2>Secure Your Seats</h2>
+                <p>Choose the arrangement that positions your brand at the epicenter of Northern Malaysia's tech ecosystem</p>
+            </div>
+            <div class="package-cards">
+                <div class="package-card featured">
+                    <h3>🥇 Full Corporate Table</h3>
+                    <p class="seats">10 Seats — Complete table allocation</p>
+                    <div class="price-label">Full Table Experience</div>
+                    <ul>
+                        <li>Front-row VIP zone seating</li>
+                        <li>Exclusive VIP Lounge & Yacht Circle entry</li>
+                        <li>Full-page brand visibility in event guide</li>
+                        <li>Dedicated table concierge service</li>
+                        <li>Premium 5-course curated dining</li>
+                        <li>Priority PDX2027 booking + discount</li>
+                        <li>Professional photography package</li>
+                        <li>Post-event press release feature</li>
+                        <li>Private networking with government stakeholders</li>
+                        <li>CEO welcome reception access</li>
+                    </ul>
+                    <a href="#form" class="package-cta">Reserve Full Table →</a>
+                </div>
+                <div class="package-card">
+                    <h3>🥈 Half Corporate Table</h3>
+                    <p class="seats">5 Seats — Shared table allocation</p>
+                    <div class="price-label">Half Table Experience</div>
+                    <ul>
+                        <li>Premium main hall zone seating</li>
+                        <li>Main gala floor networking circle access</li>
+                        <li>Logo listing in official event guide</li>
+                        <li>Standard table service</li>
+                        <li>Premium 5-course curated dining</li>
+                        <li>2-month PDX App membership</li>
+                        <li>Event photography access</li>
+                        <li>Digital achievement badge</li>
+                        <li>Post-event networking directory access</li>
+                        <li>Priority access to PDX2027 early bird</li>
+                    </ul>
+                    <a href="#form" class="package-cta">Reserve Half Table →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AWARD WINNER BENEFITS -->
+    <section class="section-blend winner-benefits" id="winner-benefits">
+        <div class="bg-image"></div>
+        <div class="bg-overlay" style="background: rgba(10, 14, 26, 0.92);"></div>
+        <div class="content">
+            <div class="section-header">
+                <div class="eyebrow">Beyond the Trophy</div>
+                <h2>Award Winner Value Package</h2>
+                <p>Winning a PDX Award unlocks a comprehensive growth and visibility package designed to amplify your success</p>
+            </div>
+            <div class="winner-grid">
+                <div class="winner-card">
+                    <div class="winner-icon">🏛️</div>
+                    <h4>IP Building & Advertising</h4>
+                    <p>Strategic brand positioning campaign across PDX digital channels, LinkedIn features, and co-branded advertising placements.</p>
+                </div>
+                <div class="winner-card">
+                    <div class="winner-icon">🎬</div>
+                    <h4>Professional Video Production</h4>
+                    <p>Cinematic company profile video shot by our production team. Used for exposure across PDX channels, your website, and social media.</p>
+                </div>
+                <div class="winner-card">
+                    <div class="winner-icon">🌐</div>
+                    <h4>PDX Network Placement</h4>
+                    <p>Featured placement across all PDX community channels — WhatsApp groups, LinkedIn network, email newsletter (10K+ subscribers).</p>
+                </div>
+                <div class="winner-card">
+                    <div class="winner-icon">🎤</div>
+                    <h4>Executive Interview Series</h4>
+                    <p>Private one-to-one interview session with your business owner. Published as a thought leadership feature across PDX media.</p>
+                </div>
+                <div class="winner-card">
+                    <div class="winner-icon">🎧</div>
+                    <h4>PDX Podcast Feature</h4>
+                    <p>Guest appearance on the PDX Podcast. Share your journey, insights, and vision with our growing listener base.</p>
+                </div>
+                <div class="winner-card">
+                    <div class="winner-icon">📰</div>
+                    <h4>Press Release & Media Kit</h4>
+                    <p>Pre-written press release template, digital winner badge, social media carousel, and framed certificate for office display.</p>
+                </div>
+                <div class="winner-card">
+                    <div class="winner-icon">📖</div>
+                    <h4>PDX Awards Book Feature</h4>
+                    <p>Your company profile published in the official PDX Awards commemorative book. Distributed to all attendees, partners, and archived as a legacy piece.</p>
+                </div>
+                <div class="winner-card">
+                    <div class="winner-icon">📸</div>
+                    <h4>Awards Night Photoshoot</h4>
+                    <p>Professional trophy photoshoot with your team on stage. Perfect for annual reports, investor decks, and marketing materials.</p>
+                </div>
+                <div class="winner-card">
+                    <div class="winner-icon">🏆</div>
+                    <h4>Physical Trophy & VIP Status</h4>
+                    <p>Engraved trophy presented on stage. Priority invitation to PDX2027 with front-row seating and exclusive networking access.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- SUPPORTING PARTNERS -->
+    <section class="partners-section" id="partners">
+        <div class="partners-content">
+            <div class="section-header">
+                <div class="eyebrow">Endorsed By</div>
+                <h2>Supporting Partners</h2>
+                <p>Backed by the institutions shaping Malaysia's digital future</p>
+            </div>
+
+            <div class="partners-tier goh-tier">
+                <h3>Guest of Honor</h3>
+                <div class="partners-row">
+                    <div class="partner-logo-card goh">
+                        <div class="goh-badge">Guest of Honor</div>
+                        <div class="logo-emoji">🇲🇾</div>
+                        <h4>MOSTI</h4>
+                        <p>Ministry of Science, Technology & Innovation</p>
+                        <p class="partner-desc">Leading Malaysia's National Technology Sovereignty Framework and digital transformation initiatives.</p>
+                        <a href="https://www.mosti.gov.my/" target="_blank" class="partner-link">mosti.gov.my →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partners-tier">
+                <h3>Strategic Partners</h3>
+                <div class="partners-row">
+                    <div class="partner-logo-card">
+                        <div class="logo-emoji">🏙️</div>
+                        <h4>Digital Penang</h4>
+                        <p class="partner-desc">Accelerating Penang's digital economy through AI adoption, startup ecosystems, and SME digitalisation.</p>
+                        <a href="https://digitalpenang.my/" target="_blank" class="partner-link">digitalpenang.my →</a>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="logo-emoji">🏭</div>
+                        <h4>MPC</h4>
+                        <p class="partner-desc">Malaysia Productivity Corporation — powering productivity for businesses, government, and employees.</p>
+                        <a href="https://www.mpc.gov.my/" target="_blank" class="partner-link">mpc.gov.my →</a>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="logo-emoji">🌿</div>
+                        <h4>Penang Green Council</h4>
+                        <p class="partner-desc">Established by Penang State Government in 2011 to champion environmental initiatives and sustainability.</p>
+                        <a href="https://www.pgc.com.my/en/" target="_blank" class="partner-link">pgc.com.my →</a>
+                    </div>
+                    <div class="partner-logo-card">
+                        <div class="logo-emoji">🤝</div>
+                        <h4>SAMENTA</h4>
+                        <p class="partner-desc">Malaysia's first SME association since 1986 — 40+ years of SME advocacy and digitalisation.</p>
+                        <a href="https://samenta.org.my/" target="_blank" class="partner-link">samenta.org.my →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORGANIZER -->
+    <section class="organizer-section">
+        <div class="organizer-content">
+            <div class="eyebrow">Organized By</div>
+            <div class="organizer-logos">
+                <div class="organizer-logo">
+                    <div class="org-emoji">🎯</div>
+                    <h4>PDX</h4>
+                    <p>Penang Digital Xchange</p>
+                </div>
+                <div class="organizer-logo">
+                    <div class="org-emoji">⚙️</div>
+                    <h4>Opirion</h4>
+                    <p>Strategic Partner</p>
+                </div>
+                <div class="organizer-logo">
+                    <div class="org-emoji">🌐</div>
+                    <h4>Coreye International</h4>
+                    <p>Strategic Partner</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="form-section" id="form">
+        <div class="form-container">
+            <h2>Request Floor Plan & Corporate Invoice</h2>
+            <p class="subtitle">Complete the form below to secure your corporate table allocation</p>
+
+            <form id="leadForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" placeholder="Your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <input type="text" name="company" placeholder="Your company name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="hello@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" placeholder="+60 12-345-6789" required>
+                </div>
+                <div class="form-group">
+                    <label>Package Preference</label>
+                    <select name="package" required>
+                        <option value="">Select your package</option>
+                        <option value="full">Full Corporate Table — 10 Seats</option>
+                        <option value="half">Half Corporate Table — 5 Seats</option>
+                        <option value="undecided">Need more information</option>
+                    </select>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="consent" id="consent" required>
+                    <label for="consent">Yes, I agree to receive emails about PDX Awards 2026 updates, event details, and corporate partnership opportunities.</label>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Request →</button>
+            </form>
+
+            <div class="form-success" id="formSuccess">
+                <h3>✓ Request Received!</h3>
+                <p>Our team will contact you within 24 hours with your floor plan and corporate invoice.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust-section">
+        <div class="trust-badges">
+            <div class="trust-badge"><span>🔒</span> SSL Secured</div>
+            <div class="trust-badge"><span>✓</span> Verified by PDX2026</div>
+            <div class="trust-badge"><span>🏢</span> PDX Organized</div>
+            <div class="trust-badge"><span>📄</span> Official Tax Invoice</div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="section-header">
+                <div class="eyebrow">Questions</div>
+                <h2>Frequently Asked</h2>
+            </div>
+            <div class="faq-item">
+                <h3>When and where is the Gala Night?</h3>
+                <p>July 15, 2026 at Setia SPICE Convention Centre, Penang. Doors open at 19:00, awards ceremony begins at 19:30.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's included in the table package?</h3>
+                <p>Each table includes premium dining, event guide listing, and networking access. Full tables include additional VIP perks like lounge access and concierge service.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I nominate my company for an award?</h3>
+                <p>Yes! PDX Digital Awards are open to external companies via paid nomination. Each category accepts 10 nominees. Contact us for nomination details and pricing.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is there a deadline for table reservations?</h3>
+                <p>Tables are allocated on a first-come, first-served basis. With only 80 VIP tables total, we recommend securing your reservation as soon as possible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 PDX Awards. Organized by PDX × Opirion × Coreye International. All rights reserved.</p>
+        <p style="margin-top: 8px;">Contact: summit@coai.my | +6012-982-8935</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date('2026-07-15T19:30:00+08:00');
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                ['days','hours','minutes','seconds'].forEach(id => {
+                    document.getElementById(id).textContent = '00';
+                });
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Form Handling
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            try {
+                const response = await fetch('/capture-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                }).catch(() => null);
+
+                this.style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+
+            } catch (error) {
+                console.error('Form error:', error);
+                btn.disabled = false;
+                btn.textContent = 'Submit Request →';
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

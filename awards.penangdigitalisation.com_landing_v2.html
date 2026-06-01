@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDX Awards 2026 — Penang Digitalisation Awards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* EXTRACTED FROM PDX2026 PDF */
+            --pdx-dark: #0A0E1A;
+            --pdx-navy: #0F1528;
+            --pdx-navy-light: #141D33;
+            --pdx-gold: #E2D4B9;
+            --pdx-gold-light: #F0E6D3;
+            --pdx-gold-dark: #C4B59A;
+            --pdx-gold-warm: #D7C7A6;
+            --pdx-blue: #1E3A8A;
+            --pdx-blue-light: #3B82F6;
+            --pdx-purple: #7C3AED;
+            --pdx-purple-light: #A78BFA;
+            --pdx-white: #FFFFFF;
+            --pdx-offwhite: #E8E8E8;
+            --pdx-gray: #8A95A8;
+            --pdx-gray-dark: #5A6578;
+            --pdx-border: rgba(226, 212, 185, 0.15);
+            
+            --font-display: 'Montserrat', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background: var(--pdx-dark);
+            color: var(--pdx-white);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(10, 14, 26, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--pdx-border);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--pdx-gold);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span { color: var(--pdx-white); font-weight: 500; }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--pdx-gray);
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a:hover { color: var(--pdx-gold); }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--pdx-gold), var(--pdx-gold-light));
+            color: var(--pdx-dark);
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.25);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 40px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 30% 50%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .corner-frame {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-color: var(--pdx-gold);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .corner-tl { top: 40px; left: 40px; border-top: 1px solid; border-left: 1px solid; }
+        .corner-tr { top: 40px; right: 40px; border-top: 1px solid; border-right: 1px solid; }
+        .corner-bl { bottom: 40px; left: 40px; border-bottom: 1px solid; border-left: 1px solid; }
+        .corner-br { bottom: 40px; right: 40px; border-bottom: 1px solid; border-right: 1px solid; }
+
+        .hero-content { position: relative; z-index: 1; max-width: 800px; }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(226, 212, 185, 0.08);
+            border: 1px solid var(--pdx-border);
+            border-radius: 30px;
+            color: var(--pdx-gold);
+            font-family: var(--font-display);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--pdx-gold-light), var(--pdx-gold), var(--pdx-gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(16px, 2.5vw, 24px);
+            font-weight: 300;
+            color: var(--pdx-gray);
+            margin-bottom: 40px;
+        }
+
+        .hero-date {
+            font-size: 14px;
+            color: var(--pdx-gray);
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .hero-date strong { 
+            color: var(--pdx-gold); 
+            font-weight: 600;
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--pdx-gold), transparent);
+            margin: 20px auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--pdx-gold), var(--pdx-gold-light));
+            color: var(--pdx-dark);
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.25);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--pdx-white);
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--pdx-gold);
+            color: var(--pdx-gold);
+        }
+
+        /* ===== SECTIONS ===== */
+        section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(226, 212, 185, 0.08);
+            border: 1px solid var(--pdx-border);
+            border-radius: 30px;
+            color: var(--pdx-gold);
+            font-family: var(--font-display);
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--pdx-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 15px;
+        }
+
+        /* ===== STATS ===== */
+        .stats-bar {
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 60px 40px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
+            color: var(--pdx-gold);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            font-size: 12px;
+            color: var(--pdx-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* ===== AWARD FAMILIES ===== */
+        .award-families {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .family-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: left;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .family-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            border-radius: 12px 12px 0 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .family-card:hover { 
+            transform: translateY(-4px); 
+            border-color: rgba(255,255,255,0.12);
+        }
+
+        .family-card:hover::before { opacity: 1; }
+
+        .family-card.blue::before { background: linear-gradient(90deg, var(--pdx-blue-light), #60A5FA); }
+        .family-card.blue:hover { border-color: rgba(96, 165, 250, 0.3); }
+        .family-card.blue h3 { color: #60A5FA; }
+
+        .family-card.gold::before { background: linear-gradient(90deg, var(--pdx-gold), var(--pdx-gold-light)); }
+        .family-card.gold:hover { border-color: rgba(201, 162, 39, 0.3); }
+        .family-card.gold h3 { color: var(--pdx-gold); }
+
+        .family-card.purple::before { background: linear-gradient(90deg, var(--pdx-purple-light), #C4B5FD); }
+        .family-card.purple:hover { border-color: rgba(167, 139, 250, 0.3); }
+        .family-card.purple h3 { color: #A78BFA; }
+
+        .family-card .tier-label {
+            font-family: var(--font-display);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--pdx-gray);
+            margin-bottom: 12px;
+        }
+
+        .family-card h3 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .family-card p {
+            color: var(--pdx-gray);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .family-card ul {
+            list-style: none;
+        }
+
+        .family-card ul li {
+            font-size: 13px;
+            color: var(--pdx-gray-dark);
+            padding: 5px 0;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .family-card ul li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--pdx-gold);
+            font-weight: bold;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+
+        .timeline-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 24px 16px;
+            text-align: center;
+            position: relative;
+        }
+
+        .timeline-item .date {
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--pdx-gold);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--pdx-white);
+            margin-bottom: 6px;
+        }
+
+        .timeline-item p {
+            font-size: 12px;
+            color: var(--pdx-gray-dark);
+            line-height: 1.4;
+        }
+
+        /* ===== SPONSORS ===== */
+        .sponsor-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .sponsor-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .sponsor-card:hover { 
+            border-color: var(--pdx-border); 
+            background: rgba(255,255,255,0.04); 
+        }
+
+        .sponsor-card h4 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--pdx-white);
+            margin-bottom: 4px;
+        }
+
+        .sponsor-card .price {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--pdx-gold);
+            margin: 8px 0 16px;
+        }
+
+        .sponsor-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .sponsor-card ul li {
+            font-size: 12px;
+            color: var(--pdx-gray-dark);
+            padding: 3px 0;
+        }
+
+        .sponsor-card ul li::before {
+            content: '✓ ';
+            color: var(--pdx-gold);
+            opacity: 0.7;
+        }
+
+        .sponsor-card.featured {
+            border-color: var(--pdx-border);
+            background: rgba(226, 212, 185, 0.05);
+        }
+
+        .sponsor-card.featured h4 { color: var(--pdx-gold); }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--pdx-navy);
+            padding: 60px 40px 40px;
+            border-top: 1px solid rgba(201, 162, 39, 0.15);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            font-family: var(--font-display);
+            color: var(--pdx-gold);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--pdx-gray);
+            font-size: 13px;
+            text-decoration: none;
+            line-height: 2;
+            display: block;
+        }
+
+        .footer-section a:hover { color: var(--pdx-gold); }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+            color: var(--pdx-gray-dark);
+            font-size: 12px;
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            nav { padding: 12px 20px; }
+            .nav-links { display: none; }
+            section { padding: 60px 20px; }
+            .hero { padding: 100px 20px 60px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .award-families { grid-template-columns: 1fr; }
+            .timeline { grid-template-columns: repeat(2, 1fr); }
+            .sponsor-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+            .corner-frame { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            .timeline { grid-template-columns: 1fr; }
+            .sponsor-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--pdx-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--pdx-gold-dark); border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">PDX <span>AWARDS</span></a>
+        <ul class="nav-links">
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#sponsors">Sponsors</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#nominate" class="cta-btn">Nominate Now</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="corner-frame corner-tl"></div>
+        <div class="corner-frame corner-tr"></div>
+        <div class="corner-frame corner-bl"></div>
+        <div class="corner-frame corner-br"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">Official Partner Presentation</div>
+            <h1>PDX AWARDS 2026</h1>
+            <div class="gold-line"></div>
+            <p class="hero-subtitle">"Beyond Boundaries"</p>
+            <p class="hero-date">
+                <strong>July 15–16, 2026</strong> | Setia SPICE Convention Centre, Penang
+            </p>
+            <div class="hero-buttons">
+                <a href="#nominate" class="btn-primary">Submit Nomination</a>
+                <a href="#awards" class="btn-secondary">Explore Awards</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>170+</h3>
+                <p>Exhibitors</p>
+            </div>
+            <div class="stat-item">
+                <h3>10,000</h3>
+                <p>Attendees</p>
+            </div>
+            <div class="stat-item">
+                <h3>11</h3>
+                <p>Award Categories</p>
+            </div>
+            <div class="stat-item">
+                <h3>RM 300K+</h3>
+                <p>Revenue Target</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AWARD FAMILIES -->
+    <section id="awards">
+        <div class="section-header">
+            <div class="badge">Award Structure</div>
+            <h2>Three Families of Recognition</h2>
+            <p>From exhibition floor excellence to corporate prestige to student innovation — we celebrate digital transformation at every level.</p>
+        </div>
+        <div class="award-families">
+            <div class="family-card blue">
+                <div class="tier-label">Tier 1 — Recognition</div>
+                <h3>🔵 PDX Excellence</h3>
+                <p>For PDX exhibitors only. Judged by booth performance, audience engagement, and innovation on the exhibition floor.</p>
+                <ul>
+                    <li>PDX Choice Award</li>
+                    <li>Most Engaging Booth</li>
+                    <li>Best Customer Experience</li>
+                    <li>People's Choice</li>
+                </ul>
+            </div>
+            <div class="family-card gold">
+                <div class="tier-label">Tier 2 — Nomination</div>
+                <h3>⚫🟡 Industry Awards</h3>
+                <p>Paid entry for external companies. Corporate prestige across digital transformation, innovation, sustainability, and startup growth.</p>
+                <ul>
+                    <li>Digital Transformation of the Year</li>
+                    <li>Most Innovative Use of Emerging Tech</li>
+                    <li>Sustainability Through Digitalization</li>
+                    <li>Rising Digital Startup of the Year</li>
+                </ul>
+            </div>
+            <div class="family-card purple">
+                <div class="tier-label">Tier 3 — Innovation</div>
+                <h3>🟣 SUPRINOVA</h3>
+                <p>For university students. Linked to IGNITE pitching ecosystem. Winners get investor-facing opportunities.</p>
+                <ul>
+                    <li>SUPRINOVA Innovation Award</li>
+                    <li>SUPRINOVA Leadership Award</li>
+                    <li>University partnership pipeline</li>
+                    <li>Investor matching post-event</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" style="background: rgba(255,255,255,0.01); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <div class="section-header">
+            <div class="badge">Key Dates</div>
+            <h2>Awards Timeline</h2>
+            <p>Mark these critical milestones for PDX Awards 2026.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="date">Week 1</div>
+                <h4>Portal Launch</h4>
+                <p>Nomination portal opens. Marketing blitz begins.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="date">Week 4</div>
+                <h4>Nominations Close</h4>
+                <p>Deadline for all submissions. Judging begins.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="date">Week 6</div>
+                <h4>Finalists Announced</h4>
+                <p>Top 3 per category revealed. Gala RSVP opens.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="date">July 15</div>
+                <h4>Exhibition Opens</h4>
+                <p>PDX2026 begins. 170+ exhibitors showcase innovation.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="date" style="color: var(--pdx-gold); font-size: 14px;">July 16 🏆</div>
+                <h4>Gala Awards Night</h4>
+                <p>Winners revealed live. PDX Association App launched.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPONSORS -->
+    <section id="sponsors">
+        <div class="section-header">
+            <div class="badge">Partnership</div>
+            <h2>Sponsorship Packages</h2>
+            <p>Align your brand with Penang's premier digital innovation event.</p>
+        </div>
+        <div class="sponsor-grid">
+            <div class="sponsor-card">
+                <h4>Bronze</h4>
+                <div class="price">RM 5K</div>
+                <ul>
+                    <li>Logo on backdrop + program</li>
+                    <li>3 social mentions</li>
+                    <li>2 standard gala tickets</li>
+                </ul>
+            </div>
+            <div class="sponsor-card">
+                <h4>Silver</h4>
+                <div class="price">RM 12K</div>
+                <ul>
+                    <li>Category naming rights</li>
+                    <li>4 VIP tickets</li>
+                    <li>1 complimentary booth</li>
+                    <li>2-min sponsor mention</li>
+                </ul>
+            </div>
+            <div class="sponsor-card">
+                <h4>Gold</h4>
+                <div class="price">RM 25K</div>
+                <ul>
+                    <li>"Powered by [Sponsor]"</li>
+                    <li>1 VVIP table (10 seats)</li>
+                    <li>2 complimentary booths</li>
+                    <li>5-min spotlight</li>
+                </ul>
+            </div>
+            <div class="sponsor-card featured">
+                <h4>Platinum</h4>
+                <div class="price">RM 50K</div>
+                <ul>
+                    <li>Event title naming</li>
+                    <li>2 VVIP tables (20 seats)</li>
+                    <li>3 booths + premium placement</li>
+                    <li>10-min keynote slot</li>
+                    <li>Year-long PDX Association partnership</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="text-align: center; border-top: 1px solid rgba(255,255,255,0.06);">
+        <div class="section-header">
+            <div class="badge">Get in Touch</div>
+            <h2>Ready to Nominate?</h2>
+            <p>Questions about categories, packages, or partnership opportunities? Reach out to the PDX Awards team.</p>
+        </div>
+        <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+            <a href="mailto:summit@coai.my" class="btn-primary">📧 summit@coai.my</a>
+            <a href="tel:+60129828935" class="btn-secondary">📱 +6012-982-8935</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>PDX Awards 2026</h4>
+                <p>Penang Digitalisation-AI Conference & Exhibition</p>
+                <p>July 15–16, 2026</p>
+                <p>Setia SPICE Convention Centre, Penang</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#awards">Award Categories</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#sponsors">Sponsorship</a>
+                <a href="https://penangdigitalisation.com">PDX2026 Main Site</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 summit@coai.my</p>
+                <p>📱 +6012-982-8935</p>
+                <p>📍 Setia SPICE Convention Centre</p>
+            </div>
+            <div class="footer-section">
+                <h4>Partners</h4>
+                <p>Presented by COAI International</p>
+                <p>Official Strategic Partner of PDX2026</p>
+                <p>60/40 Revenue Partnership</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 PDX Awards. All rights reserved. | Part of the Penang Digitalisation Conference & Exhibition</p>
+        </div>
+    </footer>
+
+</body>
+</html>
